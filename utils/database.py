@@ -1,10 +1,13 @@
 import psycopg2
 import os
+from dotenv import load_dotenv
 
 class Database:
     def __init__(self):
         self.conn = None
         self.cursor = None
+        # Asegurar que las variables de entorno estén cargadas
+        load_dotenv()
         self.conectar()
         # Ya no creamos tablas aquí, se asume que están creadas en PostgreSQL
 
